@@ -1,4 +1,6 @@
 #include "../binary_trees.h"
+
+#include <stdio.h>
 #include <limits.h>
 
 /**
@@ -35,7 +37,7 @@ int main(void)
 	binary_tree_t *root;
 	int pr_status;
 
-	root = binary_tree_node(NULL, INT_MAX);
+	root = binary_tree_node(NULL, 555);
 
 	root->left = binary_tree_node(root, 12);
 	root->left->left = binary_tree_node(root->left, 222);
