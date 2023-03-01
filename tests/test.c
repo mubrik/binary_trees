@@ -47,7 +47,7 @@ int main(void)
 	root->right->left = binary_tree_node(root->right, 256);
 	root->right->right = binary_tree_node(root->right, 512);
 
-	pr_status = binary_tree_print(root);
+	pr_status = binary_test_print(root);
 	print_status(pr_status, "Test 0");
 
 	return (0);
