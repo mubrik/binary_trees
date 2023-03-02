@@ -2,17 +2,14 @@
 
 
 /**
- * binary_tree_uncle - finds the uncle of a node
+ * binary_tree_sibling - finds the sibliing of a node
  * @node: node of tree
  * Return: node or null
  */
-binary_tree_t *binary_tree_uncle(binary_tree_t *node)
+binary_tree_t *binary_tree_sibling(binary_tree_t *node)
 {
-	binary_tree_t *dad = NULL;
-
-	if (!node || !node->parent || !node->parent->parent)
+	if (!node || !node->parent)
 		return (NULL);
-	dad = node->parent;
-
-	return (dad->parent->right == dad ? dad->parent->left : dad->parent->right);
+	return (node->parent->right == node ?
+		node->parent->left : node->parent->right);
 }
