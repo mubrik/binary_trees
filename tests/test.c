@@ -80,6 +80,42 @@ void _is_root_wrapper(binary_tree_t *node)
 }
 
 /**
+ * _height_wrapper - checks if root
+ * @tree: node
+ * Return: void
+ */
+void _height_wrapper(binary_tree_t *node)
+{
+	if (!node)
+		return;
+	printf("Height from %d: %lu\n", node->n, binary_tree_height(node));
+}
+
+/**
+ * _size_wrapper - checks if root
+ * @tree: node
+ * Return: void
+ */
+void _size_wrapper(binary_tree_t *node)
+{
+	if (!node)
+		return;
+	printf("Size from %d: %lu\n", node->n, binary_tree_size(node));
+}
+
+/**
+ * _depth_wrapper - checks if root
+ * @tree: node
+ * Return: void
+ */
+void _depth_wrapper(binary_tree_t *node)
+{
+	if (!node)
+		return;
+	printf("Depth from %d: %lu\n", node->n, binary_tree_depth(node));
+}
+
+/**
  * print_num - Prints a number
  * @n: Number to be printed
  */
@@ -157,6 +193,26 @@ int main(void)
 	binary_test_print(root);
 	binary_tree_inorder(root, print_num);
 	print_status(0, "Test 6 inorder traversal");
+
+	print_test_st("Test 7 - Task 8");
+	binary_test_print(root);
+	binary_tree_postorder(root, print_num);
+	print_status(0, "Test 7 postorder traversal");
+
+	print_test_st("Test 8 - Task 9");
+	binary_test_print(root);
+	_recursive_run(root, _height_wrapper);
+	print_status(0, "Test 8 height");
+
+	print_test_st("Test 9 - Task 10");
+	binary_test_print(root);
+	_recursive_run(root, _depth_wrapper);
+	print_status(0, "Test 9 depth");
+
+	print_test_st("Test 10 - Task 11");
+	binary_test_print(root);
+	_recursive_run(root, _size_wrapper);
+	print_status(0, "Test 10 size");
 
 	print_test_st("Test 4 - Task 3");
 	binary_tree_delete(root);
