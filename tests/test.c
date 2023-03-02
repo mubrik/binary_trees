@@ -152,6 +152,30 @@ void _balance_wrapper(binary_tree_t *node)
 }
 
 /**
+ * _full_wrapper - checks if nodes
+ * @tree: node
+ * Return: void
+ */
+void _full_wrapper(binary_tree_t *node)
+{
+	if (!node)
+		return;
+	printf("Full from %d: %d\n", node->n, binary_tree_is_full(node));
+}
+
+/**
+ * _perfect_wrapper - checks if nodes
+ * @tree: node
+ * Return: void
+ */
+void _perfect_wrapper(binary_tree_t *node)
+{
+	if (!node)
+		return;
+	printf("Perfect from %d: %d\n", node->n, binary_tree_is_perfect(node));
+}
+
+/**
  * print_num - Prints a number
  * @n: Number to be printed
  */
@@ -265,6 +289,16 @@ int main(void)
 	_recursive_run(root, _balance_wrapper);
 	/* printf("Balance %d\n", binary_tree_balance(root->right->right->left)); */
 	print_status(0, "Test 13 size");
+
+	print_test_st("Test 14 - Task 15");
+	binary_test_print(root);
+	_recursive_run(root, _full_wrapper);
+	print_status(0, "Test 14 size");
+
+	print_test_st("Test 15 - Task 16");
+	binary_test_print(root);
+	_recursive_run(root, _perfect_wrapper);
+	print_status(0, "Test 15 size");
 
 	print_test_st("Test 4 - Task 3");
 	binary_tree_delete(root);
