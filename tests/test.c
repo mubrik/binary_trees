@@ -176,6 +176,20 @@ void _perfect_wrapper(binary_tree_t *node)
 }
 
 /**
+ * _sibling_wrapper - checks if nodes
+ * @tree: node
+ * Return: void
+ */
+void _sibling_wrapper(binary_tree_t *node)
+{
+	binary_tree_t *sibling = NULL;
+	if (!node)
+		return;
+	sibling = binary_tree_sibling(node);
+	printf("Sibling from %d: %d\n", node->n, sibling ? sibling->n : 0);
+}
+
+/**
  * print_num - Prints a number
  * @n: Number to be printed
  */
@@ -299,6 +313,11 @@ int main(void)
 	binary_test_print(root);
 	_recursive_run(root, _perfect_wrapper);
 	print_status(0, "Test 15 size");
+
+	print_test_st("Test 16 - Task 17");
+	binary_test_print(root);
+	_recursive_run(root, _sibling_wrapper);
+	print_status(0, "Test 16 size");
 
 	print_test_st("Test 4 - Task 3");
 	binary_tree_delete(root);
