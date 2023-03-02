@@ -116,6 +116,42 @@ void _depth_wrapper(binary_tree_t *node)
 }
 
 /**
+ * _leaves_wrapper - checks if leaves
+ * @tree: node
+ * Return: void
+ */
+void _leaves_wrapper(binary_tree_t *node)
+{
+	if (!node)
+		return;
+	printf("Leaves from %d: %lu\n", node->n, binary_tree_leaves(node));
+}
+
+/**
+ * _nodes_wrapper - checks if nodes
+ * @tree: node
+ * Return: void
+ */
+void _nodes_wrapper(binary_tree_t *node)
+{
+	if (!node)
+		return;
+	printf("Nodes from %d: %lu\n", node->n, binary_tree_nodes(node));
+}
+
+/**
+ * _balance_wrapper - checks if nodes
+ * @tree: node
+ * Return: void
+ */
+void _balance_wrapper(binary_tree_t *node)
+{
+	if (!node)
+		return;
+	printf("Balance from %d: %+d\n", node->n, binary_tree_balance(node));
+}
+
+/**
  * print_num - Prints a number
  * @n: Number to be printed
  */
@@ -155,7 +191,7 @@ int main(void)
 	binary_test_print(root); */
 	print_test_st("Test 1 - Task 1");
 	printf("\n");
-	binary_tree_insert_left(root->right, 128);
+	binary_tree_insert_left(root->right, 197);
 	binary_tree_insert_left(root, 54);
 	/* binary_test_print(root); */
 
@@ -165,11 +201,11 @@ int main(void)
 
 	/* root = binary_tree_node(NULL, 98);
 	root->left = binary_tree_node(root, 12);
-	root->right = binary_tree_node(root, 402);
+	root->right = binary_tree_node(root, 472);
 	binary_test_print(root); */
 	print_test_st("Test 2 - Task 2");
 	printf("\n");
-	binary_tree_insert_right(root->left, 54);
+	binary_tree_insert_right(root->left, 94);
 	binary_tree_insert_right(root, 128);
 	/* binary_test_print(root); */
 
@@ -213,6 +249,22 @@ int main(void)
 	binary_test_print(root);
 	_recursive_run(root, _size_wrapper);
 	print_status(0, "Test 10 size");
+
+	print_test_st("Test 11 - Task 12");
+	binary_test_print(root);
+	_recursive_run(root, _leaves_wrapper);
+	print_status(0, "Test 11 size");
+
+	print_test_st("Test 12 - Task 13");
+	binary_test_print(root);
+	_recursive_run(root, _nodes_wrapper);
+	print_status(0, "Test 12 size");
+
+	print_test_st("Test 13 - Task 14");
+	binary_test_print(root);
+	_recursive_run(root, _balance_wrapper);
+	/* printf("Balance %d\n", binary_tree_balance(root->right->right->left)); */
+	print_status(0, "Test 13 size");
 
 	print_test_st("Test 4 - Task 3");
 	binary_tree_delete(root);
